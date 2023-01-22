@@ -1,0 +1,30 @@
+make origami of 7 animals
+	ซื้อกระดาษ origami
+	ฝึกพับด้วยกระดาษเซ็ตง่าย ๆ ก่อน
+	ทำ 7 ตัว (สีไม่ต้องเป๊ะแต่ให้ได้ประมาณนี้)
+		toad = เหลือง (greed)	cryptos
+		snake = เขียว(envy)		adameve
+		lion = แดง(wrath)		JuliusCaesar
+		snail = ฟ้าอ่อน(sloth)	immortal
+		pig = ส้ม(gluttony)	avocados
+		goat = ฟ้า(lust)		YYY
+		peacock = ม่วง(pride)	cockpea
+	สร้างรหัสให้แต่ละตัวเพื่ออ่าน story
+make a story for each animal based on its legend about the deadly sin
+	toad = cryptocurrency
+	snake = adam and eve
+	lion = Julius Caesar biography
+	snail = เรื่องหอยทากกับกระต่ายแต่คราวนี้พนันกัน 1ล้านว่าถ้าหอยทาก tag กระต่ายได้จะชนะ
+	pig = avocado biography
+	goat = triple Y hotel history
+	peacock = example
+hide a code in the story
+	toad = what is the custom token contract address of the cryptocurrency named after a chilled dessert mentioned in Tang dynasty records? (0x353401bfa0bd54baaa46a46c9227235c334d90ac)
+	snake = In which genesis does adam and eve speak for the first time after gaining the knowledge of all? (3:10)
+	lion = how many time alexander was stabbed? (23)
+	snail = In what media platforms can you find this kind of story? (Tiktok)
+	pig = Which organ system suffered the most from obesity? (heart)
+	goat = Which floor we have been to the most? (10)
+	peacock = the answers are in the question. (in the question.)
+make a lovely text related to the sins
+crete text-based reply with batch that input code
