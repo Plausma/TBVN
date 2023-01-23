@@ -287,7 +287,7 @@ echo Opening [005]PigFile.txt
 echo =================================================
 echo [1mObesity: a tragic example case study[0m
 echo Nicholas Perry was born on May 19, 1992, in Ukraine. He was adopted in infancy by an American family and was raised in Philadelphia, Pennsylvania. Home, who already had a YouTube channel, first encouraged Perry to start his own in 2014. His channel, named Nikocado Avocado, then consisted of vegan and lifestyle vlogs, as well as musical performances.
-echo On September 1, 2016, Perry released a video explaining why he no longer wanted to be a vegan YouTuber and his frustrations with the vegan community, which he described as “unbalanced, hostile and mentally unstable”.
+echo On September 1, 2016, Perry released a video explaining why he no longer wanted to be a vegan YouTuber and his frustrations with the vegan community, which he described as "unbalanced, hostile and mentally unstable".
 echo.
 echo From 2016 onwards, Perry began filming mukbang videos, becoming one of the first American men to partake in the trend, with his first mukbang video reaching 50,000 views in a couple of weeks. His earlier mukbang videos showed his pet parrot sitting on his shoulder while he ate.
 echo.
