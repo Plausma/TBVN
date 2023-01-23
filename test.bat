@@ -18,7 +18,7 @@ echo Starting main menu
 ::timeout /T 3 /NOBREAK >nul
 echo Starting failed, starting auto-calibration
 ::timeout /T 1 /NOBREAK >nul
-echo Please type "chcp 437" to calibrate your text screen
+echo Please enter "chcp 437" to calibrate your text screen
 
 :check1
 set ans=null
@@ -80,32 +80,49 @@ if "%inputmain%"=="clear" (cls & goto :mainpage) else (goto :mainchain10)
 if "%inputmain%"=="help" ( echo Type [93mmenu[0m to return to the main input & echo Type [93mexit[0m to exit the program, or Alt + F4 if you prefer a brute-force method)  & echo Type [93mclear[0m to clear the screen & echo Type [93mhelp[0m to show this message again & goto :mainpage ) else (goto :mainchain11)
 
 :mainchain11
+if "%inputmain%"=="speak" ( goto :speech ) else (goto :mainchain12)
+
+:speech
+echo [36m...
+Set "STRING=Unfortunately, I cannot reply to you directly."
+For /F %%A In ('"Prompt $H&For %%B In (1) Do Rem"') Do Set "BS=%%A"
+For /F Delims^=^ EOL^= %%A In ('"(CMD/U/CEcho=%STRING%)|Find /V """'
+) Do Set/P "=a%BS%%%A"<Nul & PathPing 127.0.0.1 -n -q 1 -p 40 1>Nul
+echo [0m
+goto :mainpage
+
+:mainchain12
 echo [91mNothing is found, please try other inputs[0m
 goto :mainpage
 ::mainchain will need to extend for easter egg
 
 :noticequestion
+echo Tap any key to start the question
+pause >nul
 echo [95m[Question][0m
 set /a questionnotif  = %questionnotif% + 1
 if %questionnotif%==1 echo (Reminder: you can always return to the menu by typing [93mmenu[0m)
+timeout /T 1 /NOBREAK >nul
 goto :%questionname%
 
 
 
 :toad
 echo Opening [001]ToadFile.txt
+timeout /T 2 /NOBREAK >nul
 echo =================================================
 echo [1mCryptocurrency - Blockchain - Bitcoin[0m
 echo Blockchain is the technology that enables the existence of cryptocurrency (among other things). Bitcoin is the name of the best-known cryptocurrency, the one for which blockchain technology, as we currently know it, was created. A cryptocurrency is a medium of exchange, such as the US dollar, but is digital and uses cryptographic techniques and its protocol to verify the transfer of funds and control the creation of monetary units.
 echo Cryptocurrency is a medium of exchange, created and stored electronically on the blockchain, using cryptographic techniques to verify the transfer of funds and an algorithm to control the creation of monetary units. Bitcoin is the best known example.
+timeout /T 1 /NOBREAK >nul
 echo Cryptocurrency has a significant pros that make it different from a traditional currency:
-echo    It has no intrinsic valune in that it is not redeemable for another commodity, such as gold.
-echo    It has no physical form and exists only in the network.
-echo    Its supply is determined by the protocal, not a central bank and the network is completely decentralized.
+echo    - It has no intrinsic valune in that it is not redeemable for another commodity, such as gold.
+echo    - It has no physical form and exists only in the network.
+echo    - Its supply is determined by the protocal, not a central bank and the network is completely decentralized.
 echo.
+timeout /T 1 /NOBREAK >nul
 echo However, due to the complexity of blockchain technology and its implication are bound to have regulations which makes it challenging for many platforms. This is up to the consumer to decide what is the best crypto-provider for them.
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=toadquestion
 goto :noticequestion
 
@@ -120,6 +137,7 @@ if "%toadans%"=="0x353401bfa0bd54baaa46a46c9227235c334d90ac" (goto :toadwin) els
 
 :toadwin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a istoaddone = %istoaddone% + 1
 if %istoaddone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [001]Toad is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
@@ -127,6 +145,7 @@ if %istoaddone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo
 
 :snake
 echo Opening [002]SnakeFile.txt
+timeout /T 3 /NOBREAK >nul
 echo =================================================
 echo [1mGenesis 3 - The Fall[0m
 echo 1 Now the serpent was more crafty than any of the wild animals the Lord God had made. He said to the woman, "Did God really say, "You must not eat from any tree in the garden?"
@@ -196,7 +215,6 @@ echo 22 And the Lord God said, "The man has now become like one of us, knowing g
 echo 23 So the Lord God banished him from the Garden of Eden to work the ground from which he had been taken. 
 echo 24 After he drove the man out, he placed on the east side of the Garden of Eden cherubim and a flaming sword flashing back and forth to guard the way to the tree of life.
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=snakequestion
 goto :noticequestion
 
@@ -211,6 +229,7 @@ if "%snakeans%"=="3:10" (goto :snakewin) else (if "%snakeans%"=="menu" (echo Ret
 
 :snakewin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a issnakedone = %issnakedone% + 1
 if %issnakedone%==1 ( echo Opening reward & echo "directory_to_reward_file" & echo [002]Snake is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
@@ -219,6 +238,7 @@ if %issnakedone%==1 ( echo Opening reward & echo "directory_to_reward_file" & ec
 
 :lion
 echo Opening [003]LionFile.txt
+timeout /T 2 /NOBREAK >nul
 echo =================================================
 echo [1mJulius Caesar: Salad[0m
 echo Julius Caesar was a Roman general and politician who named himself dictator of the Roman Empire, a rule that lasted less than one year before he was famously assassinated by political rivals in 44 B.C.E.
@@ -227,7 +247,6 @@ echo Returning to Rome, he formed political alliances that helped him become gov
 echo Returning to Italy, Caesar consolidated his power and made himself dictator. He wielded his power to enlarge the senate, created needed government reforms, and decreased Rome's debt. At the same time, he sponsored the building of the Forum Iulium and rebuilt two city-states, Carthage and Corinth. He also granted citizenship to foreigners living within the Roman Republic.
 echo In 44 B.C.E., Caesar declared himself dictator for life. His increasing power and great ambition agitated many senators who feared Caesar aspired to be king. Only a month after Caesar's declaration, a group of senators, among them Marcus Junius Brutus, Caesar's second choice as heir, and Gaius Cassius Longinus assassinated Caesar in fear of his absolute power.
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=lionquestion
 goto :noticequestion
 
@@ -242,6 +261,7 @@ if "%lionans%"=="23" (goto :lionwin) else (if "%lionans%"=="menu" (echo Returned
 
 :lionwin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a isliondone = %isliondone% + 1
 if %isliondone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [003]Lion is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
@@ -249,6 +269,7 @@ if %isliondone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo
 
 :snail
 echo Opening [004]SnailFile.txt
+timeout /T 2 /NOBREAK >nul
 echo =================================================
 echo One day, a rabbit was boasting about how fast he could run. He was laughing at the richest snail in the forest for being so slow despite having all of the gold in pretty much observable perimeter. Much to the rabbit's surprise, the snail, extremely angered by the insult, challenged him to a tag game in which he proposes 10 millions dollar for the rabbit in exchange for having him catching the rabbit whenever he goes for the rest of his life and put a rabbit to sleep. The rabbit have heard that the snail is a ringleader of a famous criminal group "White Paradoxum" but never seen them in action at all. The rabbit thought this was a good joke and accepted the proposal. The fox was to be the umpire of the game. The fox seemed to show some concern to both of them and pat their shoulder. A rabbit was bewildered why would the fox has to worry about him. As the game began, the rabbit raced way ahead of the snail, just like everyone thought.
 echo.
@@ -262,7 +283,6 @@ echo Several years later, the rabbit became old and sloppy than ever he was, is 
 echo.
 echo The snail then get caught by the SWAT team that has been following them for 12 years
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=snailquestion
 goto :noticequestion
 
@@ -277,6 +297,7 @@ if "%snailans%"=="TikTok" (goto :snailwin) else (if "%snailans%"=="menu" (echo R
 
 :snailwin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a issnaildone = %isnaildone% + 1
 if %issnaildone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [004]Snail is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
@@ -284,6 +305,7 @@ if %issnaildone%==1 (echo Opening reward & echo "directory_to_reward_file" & ech
 
 :pig
 echo Opening [005]PigFile.txt
+timeout /T 2 /NOBREAK >nul
 echo =================================================
 echo [1mObesity: a tragic example case study[0m
 echo Nicholas Perry was born on May 19, 1992, in Ukraine. He was adopted in infancy by an American family and was raised in Philadelphia, Pennsylvania. Home, who already had a YouTube channel, first encouraged Perry to start his own in 2014. His channel, named Nikocado Avocado, then consisted of vegan and lifestyle vlogs, as well as musical performances.
@@ -295,7 +317,6 @@ echo In a 2019 interview, Perry said he only plans on creating mukbang videos "f
 echo.
 echo According to Perry's interview with MEL Magazine in 2021, many of his online conflicts are self-orchestrated for the benefit of his career, citing his past education in performance arts and his desire to play the role of the villain.
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=pigquestion
 goto :noticequestion
 
@@ -310,6 +331,7 @@ if "%pigans%"=="cardiovascular" (goto :pigwin) else (if "%pigans%"=="menu" (echo
 
 :pigwin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a ispigdone = %ispigdone% + 1
 if %ispigdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [005]Pig is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
@@ -317,13 +339,13 @@ if %ispigdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo 
 
 :goat
 echo Opening [006]GoatFile.txt
+timeout /T 2 /NOBREAK >nul
 echo =================================================
 echo [1mTriple Y Hotel[0m
 echo An upscale design hotel in a mixed-use Samyan Mitrtown Project with 24-hour live zone located in the vicinity of the famous Shopping Center of Bangkok surrounded by the education environment. The 102 room hotel effortlessly blends with the Thai Chinese lifestyle in the good old days of Samyan Area with modern design and legendary Thai hospitality. Its style provides the perfect balance of comfort and convenience giving everyone an authentic experience to the feeling of travel brilliantly. Its uniqueness of the hotel itself is the location where the traveler could easily use the underground link from B1 of Samyan Mitrtown Shopping Complex to MRT Samyan station (Exit 2) which could take you to the Chinatown as well as to the City.
 echo.
 echo Its concept is differentiated with others which every paid guest will receive complimentary brewed coffee premium brand "Lavazza" and quality tea brand "Dilmah" at Grab Cafe (Tuk Tuk) between 06:30 am. and 08:00 pm at the Lobby area, Through we never had it once. Moreover, the smartphone (Portier), loungewear and Thai-styled sandals provided in the guestroom are selected an exceptional experience for guests' comfort to easily wear and walk to Samyan Shopping Complex and nearby Samyan market.
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=goatquestion
 goto :noticequestion
 
@@ -338,6 +360,7 @@ if "%goatans%"=="4" (goto :goatwin) else (if "%goatans%"=="menu" (echo Returned 
 
 :goatwin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a isgoatdone = %isgoatdone% + 1
 if %isgoatdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [006]Goat is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
@@ -345,6 +368,7 @@ if %isgoatdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo
 
 :peacock
 echo Opening [007]PeacockFile.txt
+timeout /T 2 /NOBREAK >nul
 echo =================================================
 echo [1mThis is an example of high-interaction reply in /int/ thread, please read with minimal brain usage[0m
 echo [92mLeviticus 20:13
@@ -373,7 +397,6 @@ echo I won't say what they told me but everything you can imagine they have done
 echo. 
 echo Yes, even that. That's why faggots are filth[0m
 echo =================================================
-::timeout /T 3 /NOBREAK >nul
 set questionname=peacockquestion
 goto :noticequestion
 
@@ -388,5 +411,6 @@ if "%peacockans%"=="Pridefall" (goto :peacockwin) else (if "%peacockans%"=="menu
 
 :peacockwin
 echo [92mCorrect[0m
+timeout /T 1 /NOBREAK >nul
 set /a ispeacockdone = %ispeacockdone% + 1
 if %ispeacockdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [007]peacock is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
