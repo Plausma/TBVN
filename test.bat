@@ -263,7 +263,13 @@ if "%lionans%"=="23" (goto :lionwin) else (if "%lionans%"=="menu" (echo Returned
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a isliondone = %isliondone% + 1
-if %isliondone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [003]Lion is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %isliondone%==1 (echo Check you email, maybe in spam mail & goto :lionsendmail ) else (echo Returning to menu & goto :mainpage)
+
+:lionsendmail
+::powershell -ExecutionPolicy Bypass -File "path_to_mailANSI_file"
+echo [003]Lion is complete, returning to menu
+goto :mainpage
+
 
 
 
