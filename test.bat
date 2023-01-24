@@ -11,7 +11,7 @@ set /a ispeacockdone = 0
 timeout /T 1 /NOBREAK >nul
 :: for copying es ape character only (Alt + 027) echo [95mtest
 :: all timeout will be tagged as comment for the sake of testing echo [0mdefault color
-::for /l %%y in (10, 15, 100) do ( echo Loading program progress... %%y%% )
+
 echo [0mSession current time: %date% %time%
 ::timeout /T 2 /NOBREAK >nul
 echo Starting main menu
@@ -31,7 +31,7 @@ goto :check1
 
 :yes1
 ::timeout /T 2 /NOBREAK >nul
-::chcp 437 >nul
+chcp 437 >nul
 echo Calibration complete
 ::timeout /T 2 /NOBREAK >nul
 echo Starting menu
@@ -139,7 +139,7 @@ if "%toadans%"=="0x353401bfa0bd54baaa46a46c9227235c334d90ac" (goto :toadwin) els
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a istoaddone = %istoaddone% + 1
-if %istoaddone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [001]Toad is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %istoaddone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [001] Greedy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -231,7 +231,7 @@ if "%snakeans%"=="3:10" (goto :snakewin) else (if "%snakeans%"=="menu" (echo Ret
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a issnakedone = %issnakedone% + 1
-if %issnakedone%==1 ( echo Opening reward & echo "directory_to_reward_file" & echo [002]Snake is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %issnakedone%==1 ( echo Opening reward & echo "directory_to_reward_file" & echo [002] Envy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -263,11 +263,11 @@ if "%lionans%"=="23" (goto :lionwin) else (if "%lionans%"=="menu" (echo Returned
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a isliondone = %isliondone% + 1
-if %isliondone%==1 (echo Check you email, maybe in spam mail & goto :lionsendmail ) else (echo Returning to menu & goto :mainpage)
+if %isliondone%==1 (echo Check your email, maybe in the spam mail & chcp 437 >nul & goto :lionsendmail ) else (echo Returning to menu & goto :mainpage)
 
 :lionsendmail
-::powershell -ExecutionPolicy Bypass -File "path_to_mailANSI_file"
-echo [003]Lion is complete, returning to menu
+powershell -ExecutionPolicy Bypass -File ".\lib\mailANSI.ps1"
+echo [003] Wrath is complete, returning to menu
 goto :mainpage
 
 
@@ -305,7 +305,7 @@ if "%snailans%"=="TikTok" (goto :snailwin) else (if "%snailans%"=="menu" (echo R
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a issnaildone = %isnaildone% + 1
-if %issnaildone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [004]Snail is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %issnaildone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [004] Sloth is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -339,7 +339,7 @@ if "%pigans%"=="cardiovascular" (goto :pigwin) else (if "%pigans%"=="menu" (echo
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a ispigdone = %ispigdone% + 1
-if %ispigdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [005]Pig is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %ispigdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [005] Gluttony is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -368,7 +368,7 @@ if "%goatans%"=="4" (goto :goatwin) else (if "%goatans%"=="menu" (echo Returned 
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a isgoatdone = %isgoatdone% + 1
-if %isgoatdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [006]Goat is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %isgoatdone%==1 (echo Opening reward & start "" https://www.read2burn.com/?key=8pqosuq69mkmcgcbx87 & echo [006] Lust is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -419,4 +419,47 @@ if "%peacockans%"=="Pridefall" (goto :peacockwin) else (if "%peacockans%"=="menu
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a ispeacockdone = %ispeacockdone% + 1
-if %ispeacockdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [007]peacock is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %ispeacockdone%==1 ( echo Opening reward & timeout /T 2 /NOBREAK >nul & goto :peacockwin2 ) else ( echo Returning to menu & goto :mainpage )
+
+:peacockwin2
+cls
+Set "STRING=Sandy, as known as Sandist, as known as Sandisticx, as known as Jhin Maniac, as known as former cocoa-de-long owner, as known as Tinn lover, as known as Tinn beloved"
+For /F %%A In ('"Prompt $H&For %%B In (1) Do Rem"') Do Set "BS=%%A"
+For /F Delims^=^ EOL^= %%A In ('"(CMD/U/CEcho=%STRING%)|Find /V """'
+) Do Set/P "=a%BS%%%A"<Nul & PathPing 127.0.0.1 -n -q 1 -p 20 1>Nul
+echo.
+echo - is you
+echo - is smart
+echo - is cute and lovble as fuck
+echo - is excellent for cuddling, hugging, and kissing
+echo - is having an upcoming marriage with Tinn
+echo - is chaotic playful but become more serious when talking about love
+echo - is sociable and talkative than Sandy thought to be
+echo - is great at drawing with fingers
+echo - is listening to the mystery and crime podcast
+echo - is facing hardship so many times that I ought to hug her all night
+echo - is reasonable, even self-concioius about Sandy's own feeling and know when things got irrational
+echo - is not your typical girly type which make Sandy special
+echo - is always here for Tinn ;w;
+echo - has based broken humor as Tinn
+echo - is eating a hoarde of salmon until it extinct
+echo - is interested by a pound of cheesecake
+echo - is feeling purple
+echo - is all-nighter (at least still up in the midnight is something else)
+echo - is fighting a losing battle against the shrimp
+echo - is throwing a mirror out of the house
+echo - is incredibly horny
+echo - is as hot as one can be, especially in bed 
+echo - is submissive so much that cannot act to be dominant :D
+echo - is likely to get knocked out in the bed
+echo - is a derogatory freak (why ;;)
+echo - is still seeking true love
+echo - is the only one who talk to Tinn in the night ;w;
+echo - is finding a lovely broadway music, or some edgy vocaloid >:D
+echo - is worried about losing Sandy's love, though it is not possible
+echo - is already promised with Tinn to be together forever
+echo - and Sandy is my best partner I will ever have
+echo - I love you 
+timeout /T 4 /NOBREAK >nul
+echo [007] Pride is complete, returning to menu
+goto :mainpage
