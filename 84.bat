@@ -176,6 +176,7 @@ echo And as you can see, the theme for this annniversary
 echo since this one is for [38;5;147m7th[0m
 echo it has to be something that is related to [38;5;147m7[0m right?
 echo can you figure it out?
+echo.
 echo [95m[Question] Do you know what is the theme for this year^?[0m
 echo (The answer is case-sensitive and can be found in wikipedia's title)
 set /p inputfinal=[0m\hmmm^>
@@ -184,6 +185,7 @@ if %inputfinal%=="Seven deadly sins" ( echo heh, not bad, but I guess there are 
 :finalno
 echo huh? I think you might misspell something... or you really don't know?
 echo let's try again let's try again
+echo.
 echo [95m[Question] Do you [4mtruly[24m know what is the theme for this year^?[0m
 set inputfinal=blank
 set /p inputfinal=[0m\hmmm^>
@@ -192,6 +194,7 @@ if %inputfinal%=="Seven deadly sins" ( echo huh, then why you did not answer it 
 :finalno2
 echo hm.... are you testing me?
 echo last chance! the third time rule is still valid I guess, I hope
+echo.
 echo [95m[Question] Do you [4mreally, really, really[24m know what is the theme for this years?[0m
 set inputfinal=blank
 set /p inputfinal=[0m\hmmm^>
@@ -199,7 +202,7 @@ if %inputfinal%=="Seven deadly sins" ( echo I will rail you to death for real wh
 
 :finalno3
 echo this nigga
-echo I will make this script delete itself after you finished with this >:DDDDD
+echo I will make this script delete itself after you finished then
 echo [91m^>del /f %cd%[0m
 echo ^>^:D
 echo [91myou don't have permission to delete this file[0m
@@ -214,20 +217,20 @@ goto :final2
 :final2
 echo it's just a convenient coincidence to be honest
 echo 7 years as 7 sins, well, just a same theme but lighter?
-echo [001] Greed - is what I would do with you if I can have everything in this world
+echo [93m[001][0m Greed - is what I would do with you if I can have everything in this world
 echo well, mostly time, cause that what we both don't have enough to spend time together
-echo [002] Envy - this one is erm, I don't really know will it goes well
+echo [93m[002][0m Envy - this one is erm, I don't really know will it goes well
 echo the "present" is supposed to be a text saying "You will always be mine, mine alone" with ame flashing
-echo [003] Wrath - but I turn it into an apology for when I make you mad
+echo [93m[003][0m Wrath - but I turn it into an apology for when I make you mad
 echo well, it's pretty much just flexing how I can write something to send a email to you hehe
-echo [004] Sloth - Aren't daydreaming is the best?
-echo [005] Gluttony - I... don't really know if it is ok because it just randomly come to my mind
+echo [93m[004][0m Sloth - Aren't daydreaming is the best?
+echo [93m[005][0m Gluttony - I... don't really know if it is ok because it just randomly come to my mind
 echo I mean, if you real all those sentences...maowmaow, it's quite obvious
-echo [006] Lust - somehow the comfy one lol, quite straight up horny
+echo [93m[006][0m Lust - somehow the comfy one lol, quite straight up horny
 echo did you make a copy of it? well that's the only copy I have
 echo just kidding ehehe, if you want to read it again, here
 start "" ".\lib\006.txt"
-echo and the last layer, [007] Pride - bascially describe how cool you are B)
+echo and the last layer, [93m[007][0m Pride - bascially describe how cool you are B)
 echo ......
 echo oh well, what has been done is done, and
 echo maowmaow
@@ -242,6 +245,7 @@ echo thank you if you are reading all of this, really appreaciated it
 echo there is no skip button anyway HAHA
 echo well then, until next time
 echo muah mauh ^<3
+echo.
 echo (you have achieved the ending.)
 echo (you can now view all the presents again by
 echo    - relaunch this script as it reset all the progress
@@ -260,15 +264,15 @@ if "%inputmain%"=="iamwinning" (goto :rewardcheat) else (goto :mainchainE16)
 if "%inputmain%"=="iamdonealr" (goto :final) else (goto :mainchainE17)
 
 :mainchainE17
-if "%inputmain%"=="maow" (echo [91mno cat is allowed here for the sake of sanitary[0m & goto :mainpage ) else (goto :mainchainE18)
+if "%inputmain%"=="maow" (echo [91mno cat is allowed here for a sanitary concern[0m & goto :mainpage ) else (goto :mainchainE18)
 :mainchainE18
-if "%inputmain%"=="meow" (echo [91mno cat is allowed here for the sake of sanitary[0m & goto :mainpage ) else (goto :mainchainE19)
+if "%inputmain%"=="meow" (echo [91mno cat is allowed here for a sanitary concern[0m & goto :mainpage ) else (goto :mainchainE19)
 :mainchainE19
 if "%inputmain%"=="nigga" (echo [90mthe fuck you sayin nigga^?[0m & goto :mainpage ) else (goto :mainchainE20)
 :mainchainE20
 if "%inputmain%"=="love" (echo [31mlove ^.^.^.^<3[0m & goto :mainpage ) else (goto :mainchainE21)
 :mainchainE21
-if "%inputmain%"=="Sandy" (echo [31mThank you for the Tinn's s^/o or girlfriend's name reminder[0m & goto :mainpage ) else (goto :mainchainE22)
+if "%inputmain%"=="Sandy" (echo [31mThank you for the Tinn's s^/o or girlfriend's name reminder, Tinn really loves her[0m & goto :mainpage ) else (goto :mainchainE22)
 :mainchainE22
 if "%inputmain%"=="<3" (echo [31m^<3 ^:love_forever^:[0m & goto :mainpage ) else (goto :mainchainE23)
 :mainchainE23
