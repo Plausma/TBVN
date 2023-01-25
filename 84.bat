@@ -175,6 +175,7 @@ echo And as you can see, the theme for this annniversary
 echo since this one is for [38;5;147m7th[0m
 echo it has to be something that is related to [38;5;147m7[0m right?
 echo can you figure it out?
+echo.
 echo [95m[Question] Do you know what is the theme for this year^?[0m
 echo (The answer is case-sensitive and can be found in wikipedia's title)
 set /p inputfinal=[0m\hmmm^>
@@ -183,6 +184,7 @@ if %inputfinal%=="Seven deadly sins" ( echo heh, not bad, but I guess there are 
 :finalno
 echo huh? I think you might misspell something... or you really don't know?
 echo let's try again let's try again
+echo.
 echo [95m[Question] Do you [4mtruly[24m know what is the theme for this year^?[0m
 set inputfinal=blank
 set /p inputfinal=[0m\hmmm^>
@@ -191,6 +193,7 @@ if %inputfinal%=="Seven deadly sins" ( echo huh, then why you did not answer it 
 :finalno2
 echo hm.... are you testing me?
 echo last chance! the third time rule is still valid I guess, I hope
+echo.
 echo [95m[Question] Do you [4mreally, really, really[24m know what is the theme for this years?[0m
 set inputfinal=blank
 set /p inputfinal=[0m\hmmm^>
@@ -198,7 +201,7 @@ if %inputfinal%=="Seven deadly sins" ( echo I will rail you to death for real wh
 
 :finalno3
 echo this nigga
-echo I will make this script delete itself after you finished with this >:DDDDD
+echo I will make this script delete itself after you finished then
 echo [91m^>del /f %cd%[0m
 echo ^>^:D
 echo [91myou don't have permission to delete this file[0m
