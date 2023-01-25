@@ -37,6 +37,7 @@ echo Calibration complete
 ::timeout /T 2 /NOBREAK >nul
 echo Starting menu
 ::timeout /T 1 /NOBREAK >nul
+cls
 echo ============== Decrypter 28.1.0, All right served ==============
 echo Command set is [2812023]
 echo Type [93mmenu[0m to return to the main input
@@ -271,7 +272,7 @@ if "%inputmain%"=="Sandy" (echo [31mThank you for the Tinn's s^/o or girlfriend
 :mainchainE22
 if "%inputmain%"=="<3" (echo [31m^<3 ^:love_forever^:[0m & goto :mainpage ) else (goto :mainchainE23)
 :mainchainE23
-if "%inputmain%"=="I miss you" (start "" "https://youtu.be/8WYHDfJDPDc?t=55" & start "" "https://youtu.be/XisJD8V1Rqw?t=80" & goto :mainpage ) else (goto :mainchainnone)
+if "%inputmain%"=="I miss you" (start "" "https://youtu.be/8WYHDfJDPDc?t=55" & start "" "https://youtu.be/XisJD8V1Rqw?t=79" & goto :mainpage ) else (goto :mainchainnone)
 
 
 :rewardcheat
