@@ -295,7 +295,7 @@ goto :rewardcheatinput
 :rewardcheatinput
 set viewerinput=blank
 set /p viewerinput=[0m\main\viewer^>
-if "%viewerinput%"=="001" ("dir_to_present_file" & echo 001 is opened & goto :rewardcheatinput ) else ( goto :rewardchain1 )
+if "%viewerinput%"=="001" (start "" ".\lib\001-2x.png"& echo 001 is opened & goto :rewardcheatinput ) else ( goto :rewardchain1 )
 :rewardchain1
 if "%viewerinput%"=="002" (start "" ".\lib\Psych.bat" & echo 002 is opened & goto :rewardcheatinput ) else ( goto :rewardchain2 )
 :rewardchain2
@@ -305,7 +305,7 @@ powershell -ExecutionPolicy Bypass -File ".\lib\mailANSI.ps1"
 echo 003 is opened
 goto :rewardcheatinput 
 :rewardchain3
-if "%viewerinput%"=="004" ("dir_to_present_file" & echo 004 is opened & goto :rewardcheatinput ) else ( goto :rewardchain4 )
+if "%viewerinput%"=="004" (start "" ".\lib\004-2x.png" & echo 004 is opened & goto :rewardcheatinput ) else ( goto :rewardchain4 )
 :rewardchain4
 if "%viewerinput%"=="005" (start "" ".\lib\GluttonyEyes.png" & echo 005 is opened & goto :rewardcheatinput ) else ( goto :rewardchain5 )
 :rewardchain5
@@ -367,7 +367,7 @@ if "%toadans%"=="0x353401bfa0bd54baaa46a46c9227235c334d90ac" (goto :toadwin) els
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a istoaddone = %istoaddone% + 1
-if %istoaddone%==1 (echo Opening present & echo "directory_to_reward_file" & echo [001] Greedy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %istoaddone%==1 (echo Opening present & start "" ".\lib\001-2x.png" & echo [001] Greedy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -533,7 +533,7 @@ if "%snailans%"=="TikTok" (goto :snailwin) else (if "%snailans%"=="menu" (echo R
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a issnaildone = %isnaildone% + 1
-if %issnaildone%==1 (echo Opening present & echo "directory_to_reward_file" & echo [004] Sloth is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %issnaildone%==1 (echo Opening present & start "" ".\lib\004-2x.png"  & echo [004] Sloth is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
