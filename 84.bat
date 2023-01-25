@@ -231,7 +231,7 @@ if "%snakeans%"=="3:10" (goto :snakewin) else (if "%snakeans%"=="menu" (echo Ret
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a issnakedone = %issnakedone% + 1
-if %issnakedone%==1 ( echo Opening reward & echo "directory_to_reward_file" & echo [002] Envy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %issnakedone%==1 ( echo Opening file & start ".\lib\Psych.bat" & echo [002] Envy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -339,7 +339,7 @@ if "%pigans%"=="cardiovascular" (goto :pigwin) else (if "%pigans%"=="menu" (echo
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a ispigdone = %ispigdone% + 1
-if %ispigdone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [005] Gluttony is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %ispigdone%==1 (echo Opening reward & start ".\lib\GluttonyEyes.png" & echo [005] Gluttony is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
