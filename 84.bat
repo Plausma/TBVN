@@ -7,14 +7,14 @@ set /a issnaildone = 0
 set /a ispigdone = 0
 set /a isgoatdone = 0
 set /a ispeacockdone = 0
-
+set /a Tcount = 0
+set /a Lcount = 0
+set inputfinal=blank
 timeout /T 1 /NOBREAK >nul
 :: for copying es ape character only (Alt + 027) echo [95mtest
 :: all timeout will be tagged as comment for the sake of testing echo [0mdefault color
 
 echo [0mSession current time: %date% %time%
-::timeout /T 2 /NOBREAK >nul
-echo Starting main menu
 ::timeout /T 3 /NOBREAK >nul
 echo Starting failed, starting auto-calibration
 ::timeout /T 1 /NOBREAK >nul
@@ -30,8 +30,9 @@ echo [91mCalibration not accepted, please try again
 goto :check1
 
 :yes1
-::timeout /T 2 /NOBREAK >nul
+echo Starting calibration
 chcp 437 >nul
+::mode
 echo Calibration complete
 ::timeout /T 2 /NOBREAK >nul
 echo Starting menu
@@ -44,9 +45,10 @@ echo Type [93mhelp[0m to show this message again
 echo Type [93mexit[0m to exit the program (or Alt + F4 if you prefer a brute-force method)
 
 :mainpage
+set /a isalldone = %istoaddone% + %issnakedone% + %isliondone% + %issnaildone% + %ispigdone% + %isgoatdone% + %ispeacockdone% 
+if %isalldone%==7 echo You have completed all challenges^. type "[93mepilogue[0m" to view the ending
 set inputmain=blank
 set /p inputmain=[0m\main^>
-if not defined inputmain set "inputmain=blank"
 if "%inputmain%"=="cryptos" (goto :toad) else (goto :mainchain1)
 
 :mainchain1
@@ -83,7 +85,7 @@ if "%inputmain%"=="help" ( echo Type [93mmenu[0m to return to the main input &
 if "%inputmain%"=="speak" ( goto :speech ) else (goto :mainchain12)
 
 :speech
-echo [36m...
+echo [96m...
 Set "STRING=Unfortunately, I cannot reply to you directly."
 For /F %%A In ('"Prompt $H&For %%B In (1) Do Rem"') Do Set "BS=%%A"
 For /F Delims^=^ EOL^= %%A In ('"(CMD/U/CEcho=%STRING%)|Find /V """'
@@ -92,6 +94,227 @@ echo [0m
 goto :mainpage
 
 :mainchain12
+if "%inputmain%"=="iwannaseeitagain" (goto :resetall) else (goto :mainchainE1)
+
+:resetall
+set /a istoaddone = 0
+set /a issnakedone = 0
+set /a isliondone = 0
+set /a issnaildone = 0
+set /a ispigdone = 0
+set /a isgoatdone = 0
+set /a ispeacockdone = 0
+set /a Tcount = 0
+set /a Lcount = 0
+echo All progress including easter egg is reset to 0
+goto :mainpage
+
+:mainchainE1
+if "%inputmain%"=="test" (echo [96mLorem ipsum dolor sit amet, everything is OK, for now[0m & goto :mainpage ) else (goto :mainchainE2)
+
+:mainchainE2
+if "%inputmain%"=="Tinn" if %Tcount%==0 (echo [96mmaowmaowmaow?[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE3 )
+:mainchainE3
+if "%inputmain%"=="Tinn" if %Tcount%==1 (echo [96mmaowmaowmaowmaowmaowmaow[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE4 )
+:mainchainE4
+if "%inputmain%"=="Tinn" if %Tcount%==2 (echo [96mNoooo complete what I have done for you before calling me outttt[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE5 )
+:mainchainE5
+if "%inputmain%"=="Tinn" if %Tcount%==3 (echo [96m^:0 I will beat you to death, I mean rail you to death ^>^:D[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE6 )
+:mainchainE6
+if "%inputmain%"=="Tinn" if %Tcount%==4 (echo [96mLove you Sandy ^<3[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE7 )
+:mainchainE7
+if "%inputmain%"=="Tinn" if %Tcount% gtr 4 if NOT %Tcount%==10 ( set /a Tcount = %Tcount% + 1 & echo [96mSandy, for the %Tcount%th time stop calling mee[0m  & goto :mainpage ) else (goto :mainchainE7a )
+
+:mainchainE7a
+if "%inputmain%"=="Tinn" if %Tcount% gtr 4 if %Tcount%==10 (set /a Tcount = %Tcount% + 1 & start "" "https://pbs.twimg.com/media/FTaEjUWWQAE0puA.jpg" & goto :mainpage ) else (goto :mainchainE8 )
+:mainchainE8
+if "%inputmain%"=="I love you" if %Lcount%==0 (echo [96mLove you too sandy ^<3[0m & set /a Lcount = %Lcount% + 1 & goto :mainpage ) else (goto :mainchainE9 )
+:mainchainE9
+if "%inputmain%"=="I love you" if %Lcount%==1 (echo [96mMuah muah muah muah[0m & set /a Lcount = %Lcount% + 1 & goto :mainpage ) else (goto :mainchainE10 )
+:mainchainE10
+if "%inputmain%"=="I love you" if %Lcount%==2 (echo [96mCome and get a hug from me ^:3[0m & set /a Lcount = %Lcount% + 1 & goto :mainpage ) else (goto :mainchainE11 )
+:mainchainE11
+if "%inputmain%"=="I love you" if %Lcount% gtr 2 if NOT %Lcount%==10 (set /a Lcount = %Lcount% + 1 & echo [96mLove youuuuu[0m & goto :mainpage ) else (goto :mainchainE12 )
+:mainchainE12
+if "%inputmain%"=="I love you" if %Lcount%==10 (start "" "https://i.pinimg.com/originals/81/0f/63/810f63f229a27bb69302e5bc5c49134d.jpg" & set /a Lcount = %Lcount% + 1 & goto :mainpage ) else (goto :mainchainE13 )
+
+:mainchainE13
+if "%inputmain%"=="progress" (goto :checkprogress) else (goto :mainchainE14)
+
+:checkprogress
+echo ======================
+echo istoaddone     = %istoaddone%
+echo issnakedone    = %issnakedone%
+echo isliondone     = %isliondone%
+echo issnaildone    = %issnaildone%
+echo ispigdone      = %ispigdone%
+echo isgoatdone     = %isgoatdone%
+echo ispeacockdone  = %ispeacockdone%
+echo Tcount         = %Tcount%
+echo Lcount         = %Lcount%
+echo ======================
+goto :mainpage
+
+:mainchainE14
+set /a isalldone = %istoaddone% + %issnakedone% + %isliondone% + %issnaildone% + %ispigdone% + %isgoatdone% + %ispeacockdone% 
+if "%inputmain%"=="finally" ( if %isalldone%==7 (goto :final ) else (goto :notfinal ) ) else (goto :mainchainE15 )
+
+:notfinal
+echo [91mYou have not completed all of the challenge yet (%isalldone%^/7)[0m
+goto :mainpage 
+
+:final
+cls
+echo Thank you for playing this far!
+echo I don't know whether it will be suitable for our [38;5;147m7th annniversary [0m
+echo or that appreaciated by you, since you know, I have done this before
+echo this is just more like me flexing the skill qwq
+echo though I can say that I truly dedicate myself to make this one the best for you
+echo um, as it should be for the [38;5;147m84[0m monthsary!
+echo And as you can see, the theme for this annniversary
+echo since this one is for [38;5;147m7th[0m
+echo it has to be something that is related to [38;5;147m7[0m right?
+echo can you figure it out?
+echo [95m[Question] Do you know what is the theme for this year^?[0m
+echo (The answer is case-sensitive and can be found in wikipedia's title)
+set /p inputfinal=[0m\hmmm^>
+if %inputfinal%=="Seven deadly sins" ( echo heh, not bad, but I guess there are plenty of hint for you anyways & goto :final2 ) else (goto :finalno )
+
+:finalno
+echo huh? I think you might misspell something... or you really don't know?
+echo let's try again let's try again
+echo [95m[Question] Do you [4mtruly[24m know what is the theme for this year^?[0m
+set inputfinal=blank
+set /p inputfinal=[0m\hmmm^>
+if %inputfinal%=="Seven deadly sins" ( echo huh, then why you did not answer it correctly at the first time ^>^:O & goto :final2 ) else (goto :finalno2 )
+
+:finalno2
+echo hm.... are you testing me?
+echo last chance! the third time rule is still valid I guess, I hope
+echo [95m[Question] Do you [4mreally, really, really[24m know what is the theme for this years?[0m
+set inputfinal=blank
+set /p inputfinal=[0m\hmmm^>
+if %inputfinal%=="Seven deadly sins" ( echo I will rail you to death for real when we book the hotel again^. prepare your ass & goto :final2 ) else (goto :finalno3 )
+
+:finalno3
+echo this nigga
+echo I will make this script delete itself after you finished with this >:DDDDD
+echo [91m^>del /f %cd%[0m
+echo ^>^:D
+echo [91myou don't have permission to delete this file[0m
+echo ^:O
+echo ^:^\ fine, I will let you go this time
+echo not because you are cute or funny or anything like that hmph
+echo (I love you)
+echo right, the theme for this year is...
+echo the seven deadly sins!
+goto :final2
+
+:final2
+echo it's just a convenient coincidence to be honest
+echo 7 years as 7 sins, well, just a same theme but lighter?
+echo [001] Greed - is what I would do with you if I can have everything in this world
+echo well, mostly time, cause that what we both don't have enough to spend time together
+echo [002] Envy - this one is erm, I don't really know will it goes well
+echo the "present" is supposed to be a text saying "You will always be mine, mine alone" with ame flashing
+echo [003] Wrath - but I turn it into an apology for when I make you mad
+echo well, it's pretty much just flexing how I can write something to send a email to you hehe
+echo [004] Sloth - Aren't daydreaming is the best?
+echo [005] Gluttony - I... don't really know if it is ok because it just randomly come to my mind
+echo I mean, if you real all those sentences...maowmaow, it's quite obvious
+echo [006] Lust - somehow the comfy one lol, quite straight up horny
+echo did you make a copy of it? well that's the only copy I have
+echo just kidding ehehe, if you want to read it again, here
+start "" ".\lib\006.txt"
+echo and the last layer, [007] Pride - bascially describe how cool you are B)
+echo ......
+echo oh well, what has been done is done, and
+echo maowmaow
+echo I love you Sandy
+echo I hope that this small piece of scripts can make you happy
+echo not small considered that it has 600+ lines of code, but whatever 
+echo I don't really know this time since it has more gimmick that the last one
+echo which---did not goes all the same way
+echo I mean, one open picture, one send an email, one glitched, one run a bullet of text lol
+echo anyways
+echo thank you if you are reading all of this, really appreaciated it
+echo there is no skip button anyway HAHA
+echo well then, until next time
+echo muah mauh ^<3
+echo (you have achieved the ending.)
+echo (you can now view all the presents again by
+echo    - relaunch this script as it reset all the progress
+echo    - type "[93miwannaseeitagain[0m" to reset the progress without closing the script
+echo    - type "[93miamwinning[0m" to view the present menu
+echo    - type "[93miamdonealr[0m" to view the final part (this part)
+echo )
+echo press any key to Exit
+pause >nul
+exit
+
+:mainchainE15
+if "%inputmain%"=="iamwinning" (goto :rewardcheat) else (goto :mainchainE16)
+
+:mainchainE16
+if "%inputmain%"=="iamdonealr" (goto :final) else (goto :mainchainE17)
+
+:mainchainE17
+if "%inputmain%"=="maow" (echo [91mno cat is allowed here for the sake of sanitary[0m & goto :mainpage ) else (goto :mainchainE18)
+:mainchainE18
+if "%inputmain%"=="meow" (echo [91mno cat is allowed here for the sake of sanitary[0m & goto :mainpage ) else (goto :mainchainE19)
+:mainchainE19
+if "%inputmain%"=="nigga" (echo [90mthe fuck you sayin nigga^?[0m & goto :mainpage ) else (goto :mainchainE20)
+:mainchainE20
+if "%inputmain%"=="love" (echo [31mlove ^.^.^.^<3[0m & goto :mainpage ) else (goto :mainchainE21)
+:mainchainE21
+if "%inputmain%"=="Sandy" (echo [31mThank you for the Tinn's s^/o or girlfriend's name reminder[0m & goto :mainpage ) else (goto :mainchainE22)
+:mainchainE22
+if "%inputmain%"=="<3" (echo [31m^<3 ^:love_forever^:[0m & goto :mainpage ) else (goto :mainchainE23)
+:mainchainE23
+if "%inputmain%"=="I miss you" (start "" "https://youtu.be/8WYHDfJDPDc?t=55" & start "" "https://youtu.be/XisJD8V1Rqw?t=80" & goto :mainpage ) else (goto :mainchainnone)
+
+
+:rewardcheat
+echo ======= Omnipresent viewer =======
+echo type the number to view the present (e.g. 006 for Lust)
+echo type "[93mmenu[0m" to return to main menu
+echo [93m[001][0m Greed
+echo [93m[002][0m Envy
+echo [93m[003][0m Wrath
+echo [93m[004][0m Sloth
+echo [93m[005][0m Gluttony
+echo [93m[006][0m Lust
+echo [93m[007][0m Pride
+goto :rewardcheatinput
+
+:rewardcheatinput
+set viewerinput=blank
+set /p viewerinput=[0m\main\viewer^>
+if "%viewerinput%"=="001" ("dir_to_present_file" & echo 001 is opened & goto :rewardcheatinput ) else ( goto :rewardchain1 )
+:rewardchain1
+if "%viewerinput%"=="002" (start "" ".\lib\Psych.bat" & echo 002 is opened & goto :rewardcheatinput ) else ( goto :rewardchain2 )
+:rewardchain2
+if "%viewerinput%"=="003" (goto :sublionopenmail ) else ( goto :rewardchain3 )
+:sublionopenmail
+powershell -ExecutionPolicy Bypass -File ".\lib\mailANSI.ps1"
+echo 003 is opened
+goto :rewardcheatinput 
+:rewardchain3
+if "%viewerinput%"=="004" ("dir_to_present_file" & echo 004 is opened & goto :rewardcheatinput ) else ( goto :rewardchain4 )
+:rewardchain4
+if "%viewerinput%"=="005" (start "" ".\lib\GluttonyEyes.png" & echo 005 is opened & goto :rewardcheatinput ) else ( goto :rewardchain5 )
+:rewardchain5
+if "%viewerinput%"=="006" (start "" ".\lib\006.txt" & echo 006 is opened & goto :rewardcheatinput ) else ( goto :rewardchain6 )
+:rewardchain6
+if "%viewerinput%"=="007" (  set /a pass=1 & goto :peacockwin2 ) else ( goto :rewardchainmenu )
+
+:rewardchainmenu
+if "%viewerinput%"=="menu" ( echo Returned to menu & goto :mainpage ) else ( goto :rewardchainnone )
+:rewardchainnone
+echo [91mInvalid input, please try again[0m
+goto :rewardcheatinput
+ 
+:mainchainnone
 echo [91mNothing is found, please try other inputs[0m
 goto :mainpage
 ::mainchain will need to extend for easter egg
@@ -139,7 +362,7 @@ if "%toadans%"=="0x353401bfa0bd54baaa46a46c9227235c334d90ac" (goto :toadwin) els
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a istoaddone = %istoaddone% + 1
-if %istoaddone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [001] Greedy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %istoaddone%==1 (echo Opening present & echo "directory_to_reward_file" & echo [001] Greedy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -231,7 +454,7 @@ if "%snakeans%"=="3:10" (goto :snakewin) else (if "%snakeans%"=="menu" (echo Ret
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a issnakedone = %issnakedone% + 1
-if %issnakedone%==1 ( echo Opening file & start ".\lib\Psych.bat" & echo [002] Envy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %issnakedone%==1 ( echo Opening file & start "" ".\lib\Psych.bat" & echo [002] Envy is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -263,7 +486,7 @@ if "%lionans%"=="23" (goto :lionwin) else (if "%lionans%"=="menu" (echo Returned
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a isliondone = %isliondone% + 1
-if %isliondone%==1 (echo Check your email, maybe in the spam mail & chcp 437 >nul & goto :lionsendmail ) else (echo Returning to menu & goto :mainpage)
+if %isliondone%==1 (echo Check your email, maybe in the spam mail & goto :lionsendmail ) else (echo Returning to menu & goto :mainpage)
 
 :lionsendmail
 powershell -ExecutionPolicy Bypass -File ".\lib\mailANSI.ps1"
@@ -305,7 +528,7 @@ if "%snailans%"=="TikTok" (goto :snailwin) else (if "%snailans%"=="menu" (echo R
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a issnaildone = %isnaildone% + 1
-if %issnaildone%==1 (echo Opening reward & echo "directory_to_reward_file" & echo [004] Sloth is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %issnaildone%==1 (echo Opening present & echo "directory_to_reward_file" & echo [004] Sloth is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -339,7 +562,7 @@ if "%pigans%"=="cardiovascular" (goto :pigwin) else (if "%pigans%"=="menu" (echo
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a ispigdone = %ispigdone% + 1
-if %ispigdone%==1 (echo Opening reward & start ".\lib\GluttonyEyes.png" & echo [005] Gluttony is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %ispigdone%==1 (echo Opening present &  ".\lib\GluttonyEyes.png" & echo [005] Gluttony is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -368,7 +591,7 @@ if "%goatans%"=="4" (goto :goatwin) else (if "%goatans%"=="menu" (echo Returned 
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a isgoatdone = %isgoatdone% + 1
-if %isgoatdone%==1 (echo Opening reward & start "" https://www.read2burn.com/?key=8pqosuq69mkmcgcbx87 & echo [006] Lust is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
+if %isgoatdone%==1 (echo Opening present & start "" https://www.read2burn.com/?key=8pqosuq69mkmcgcbx87 & echo [006] Lust is complete, returning to menu & goto :mainpage) else (echo Returning to menu & goto :mainpage)
 
 
 
@@ -419,16 +642,17 @@ if "%peacockans%"=="Pridefall" (goto :peacockwin) else (if "%peacockans%"=="menu
 echo [92mCorrect[0m
 timeout /T 1 /NOBREAK >nul
 set /a ispeacockdone = %ispeacockdone% + 1
-if %ispeacockdone%==1 ( echo Opening reward & timeout /T 2 /NOBREAK >nul & goto :peacockwin2 ) else ( echo Returning to menu & goto :mainpage )
+if %ispeacockdone%==1 ( echo Opening present & timeout /T 2 /NOBREAK >nul & goto :peacockwin2 ) else ( echo Returning to menu & goto :mainpage )
 
 :peacockwin2
 cls
+echo [38;5;159m
 Set "STRING=Sandy, as known as Sandist, as known as Sandisticx, as known as Jhin Maniac, as known as former cocoa-de-long owner, as known as Tinn lover, as known as Tinn beloved"
 For /F %%A In ('"Prompt $H&For %%B In (1) Do Rem"') Do Set "BS=%%A"
 For /F Delims^=^ EOL^= %%A In ('"(CMD/U/CEcho=%STRING%)|Find /V """'
 ) Do Set/P "=a%BS%%%A"<Nul & PathPing 127.0.0.1 -n -q 1 -p 20 1>Nul
 echo.
-echo - is you
+echo [38;5;177m- is you
 echo - is smart
 echo - is cute and lovble as fuck
 echo - is excellent for cuddling, hugging, and kissing
@@ -459,7 +683,11 @@ echo - is finding a lovely broadway music, or some edgy vocaloid >:D
 echo - is worried about losing Sandy's love, though it is not possible
 echo - is already promised with Tinn to be together forever
 echo - and Sandy is my best partner I will ever have
-echo - I love you 
+echo - I love you ^<3[0m
+if %pass%==1 ( echo 007 is opened & set /a pass=0 & goto :rewardcheatinput ) else (goto :peacockwin3 )
+goto :peacockwin3
+
+:peacockwin3
 timeout /T 4 /NOBREAK >nul
 echo [007] Pride is complete, returning to menu
 goto :mainpage
