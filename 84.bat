@@ -343,8 +343,6 @@ if "%inputmain%"=="I miss you" (start "" "https://youtu.be/XisJD8V1Rqw?t=79" & s
 :mainchainE24
 if "%inputmain%"=="maowmaowmaow" (echo [91maowmaowmaowmaowmaowmaowmaowmaow-maowmaow maowmaowmaowmaowmaowmaow[0m & goto :mainpage ) else (goto :mainchainnone )
 
-
-
 :rewardcheat
 echo ======= Omnipresent viewer =======
 echo type the number to view the present (e.g. 006 for Lust)
