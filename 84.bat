@@ -339,7 +339,10 @@ if "%inputmain%"=="Sandy" (echo [31mThank you for the Tinn's s^/o or girlfriend
 :mainchainE22
 if "%inputmain%"=="<3" (echo [31m^<3 ^:love_forever^:[0m & goto :mainpage ) else (goto :mainchainE23)
 :mainchainE23
-if "%inputmain%"=="I miss you" (start "" "https://youtu.be/8WYHDfJDPDc?t=55" & start "" "https://youtu.be/XisJD8V1Rqw?t=79" & goto :mainpage ) else (goto :mainchainnone)
+if "%inputmain%"=="I miss you" (start "" "https://youtu.be/XisJD8V1Rqw?t=79" & start "" "https://youtu.be/8WYHDfJDPDc?t=55" & goto :mainpage ) else (goto :mainchainE24 )
+:mainchainE24
+if "%inputmain%"=="maowmaowmaow" (echo [91maowmaowmaowmaowmaowmaowmaowmaow-maowmaow maowmaowmaowmaowmaowmaow[0m & goto :mainpage ) else (goto :mainchainnone )
+
 
 
 :rewardcheat
