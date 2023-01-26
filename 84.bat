@@ -1,4 +1,5 @@
 @echo off
+mode 200
 set /a questionnotif = 0
 set /a istoaddone = 0
 set /a issnakedone = 0
@@ -33,7 +34,7 @@ goto :check1
 :yes1
 echo Starting calibration
 chcp 437 >nul
-mode
+timeout /T 2 /NOBREAK >nul
 echo Calibration complete
 timeout /T 2 /NOBREAK >nul
 echo Starting menu
