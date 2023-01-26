@@ -1,5 +1,6 @@
 echo off
 set \a test = 0 >nul
+chcp 437 >nul
 mode 85,45 
 :rotate
 color 0f

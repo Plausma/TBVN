@@ -15,9 +15,9 @@ timeout /T 1 /NOBREAK >nul
 :: all timeout will be tagged as comment for the sake of testing echo [0mdefault color
 
 echo [0mSession current time: %date% %time%
-::timeout /T 3 /NOBREAK >nul
+timeout /T 3 /NOBREAK >nul
 echo Starting failed, starting auto-calibration
-::timeout /T 1 /NOBREAK >nul
+timeout /T 1 /NOBREAK >nul
 echo Please enter "chcp 437" to calibrate your text screen
 
 :check1
@@ -32,11 +32,11 @@ goto :check1
 :yes1
 echo Starting calibration
 chcp 437 >nul
-::mode
+mode
 echo Calibration complete
-::timeout /T 2 /NOBREAK >nul
+timeout /T 2 /NOBREAK >nul
 echo Starting menu
-::timeout /T 1 /NOBREAK >nul
+timeout /T 1 /NOBREAK >nul
 cls
 echo ============== Decrypter 28.1.0, All right served ==============
 echo Command set is [2812023]
@@ -122,9 +122,9 @@ if "%inputmain%"=="Tinn" if %Tcount%==2 (echo [96mNoooo complete what I have do
 :mainchainE5
 if "%inputmain%"=="Tinn" if %Tcount%==3 (echo [96m^:0 I will beat you to death, I mean rail you to death ^>^:D[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE6 )
 :mainchainE6
-if "%inputmain%"=="Tinn" if %Tcount%==4 (echo [96mLove you Sandy ^<3[0m & set /a Tcount = %Tcount% + 1 & goto :mainpage ) else (goto :mainchainE7 )
+if "%inputmain%"=="Tinn" if %Tcount%==4 (echo [96mLove you Sandy ^<3[0m & set /a Tcount = %Tcount% + 2 & goto :mainpage ) else (goto :mainchainE7 )
 :mainchainE7
-if "%inputmain%"=="Tinn" if %Tcount% gtr 4 if NOT %Tcount%==10 ( set /a Tcount = %Tcount% + 1 & echo [96mSandy, for the %Tcount%th time stop calling mee[0m  & goto :mainpage ) else (goto :mainchainE7a )
+if "%inputmain%"=="Tinn" if %Tcount% gtr 4 if NOT %Tcount%==10 ( echo [96mSandy, for the %Tcount%th time stop calling mee[0m & set /a Tcount = %Tcount% + 1  & goto :mainpage ) else (goto :mainchainE7a )
 
 :mainchainE7a
 if "%inputmain%"=="Tinn" if %Tcount% gtr 4 if %Tcount%==10 (set /a Tcount = %Tcount% + 1 & start "" "https://pbs.twimg.com/media/FTaEjUWWQAE0puA.jpg" & goto :mainpage ) else (goto :mainchainE8 )
