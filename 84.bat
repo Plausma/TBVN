@@ -26,6 +26,7 @@ set /p ans=[0m^>
 if "%ans%"=="chcp 437" (goto :yes1) else (goto :not1)
 
 :not1
+if "%ans%"=="bypass"  echo [93mWarning^: calibration bypassed, force calibration activate[0m & chcp 437 >nul & pause & goto :menupage
 echo [91mCalibration not accepted, please try again
 goto :check1
 
@@ -37,6 +38,9 @@ echo Calibration complete
 timeout /T 2 /NOBREAK >nul
 echo Starting menu
 timeout /T 1 /NOBREAK >nul
+goto :menupage
+
+:menupage
 cls
 echo ============== Decrypter 28.1.0, All right served ==============
 echo Command set is [2812023]
@@ -166,25 +170,40 @@ goto :mainpage
 
 :final
 cls
+timeout /T 1 /NOBREAK >nul
 echo Thank you for playing this far!
+timeout /T 2 /NOBREAK >nul
 echo I don't know whether it will be suitable for our [38;5;147m7th annniversary [0m
+timeout /T 3 /NOBREAK >nul
 echo or that appreaciated by you, since you know, I have done this before
+timeout /T 3 /NOBREAK >nul
 echo this is just more like me flexing the skill qwq
+timeout /T 2 /NOBREAK >nul
 echo though I can say that I truly dedicate myself to make this one the best for you
+timeout /T 3 /NOBREAK >nul
 echo um, as it should be for the [38;5;147m84[0m monthsary!
+timeout /T 3 /NOBREAK >nul
 echo And as you can see, the theme for this annniversary
+timeout /T 3 /NOBREAK >nul
 echo since this one is for [38;5;147m7th[0m
+timeout /T 3 /NOBREAK >nul
 echo it has to be something that is related to [38;5;147m7[0m right?
+timeout /T 3 /NOBREAK >nul
 echo can you figure it out?
+timeout /T 1 /NOBREAK >nul
 echo.
 echo [95m[Question] Do you know what is the theme for this year^?[0m
 echo (The answer is case-sensitive and can be found in wikipedia's title)
+set /p inputfinal=null
 set /p inputfinal=[0m\hmmm^>
 if %inputfinal%=="Seven deadly sins" ( echo heh, not bad, but I guess there are plenty of hint for you anyways & goto :final2 ) else (goto :finalno )
 
 :finalno
+timeout /T 2 /NOBREAK >nul
 echo huh? I think you might misspell something... or you really don't know?
+timeout /T 2 /NOBREAK >nul
 echo let's try again let's try again
+timeout /T 2 /NOBREAK >nul
 echo.
 echo [95m[Question] Do you [4mtruly[24m know what is the theme for this year^?[0m
 set inputfinal=blank
@@ -192,8 +211,11 @@ set /p inputfinal=[0m\hmmm^>
 if %inputfinal%=="Seven deadly sins" ( echo huh, then why you did not answer it correctly at the first time ^>^:O & goto :final2 ) else (goto :finalno2 )
 
 :finalno2
+timeout /T 2 /NOBREAK >nul
 echo hm.... are you testing me?
+timeout /T 1 /NOBREAK >nul
 echo last chance! the third time rule is still valid I guess, I hope
+timeout /T 2 /NOBREAK >nul
 echo.
 echo [95m[Question] Do you [4mreally, really, really[24m know what is the theme for this years?[0m
 set inputfinal=blank
@@ -201,50 +223,91 @@ set /p inputfinal=[0m\hmmm^>
 if %inputfinal%=="Seven deadly sins" ( echo I will rail you to death for real when we book the hotel again^. prepare your ass & goto :final2 ) else (goto :finalno3 )
 
 :finalno3
+timeout /T 2 /NOBREAK >nul
 echo this nigga
+timeout /T 1 /NOBREAK >nul
 echo I will make this script delete itself after you finished then
+timeout /T 2 /NOBREAK >nul
 echo [91m^>del /f %cd%[0m
+timeout /T 1 /NOBREAK >nul
 echo ^>^:D
+timeout /T 4 /NOBREAK >nul
 echo [91myou don't have permission to delete this file[0m
+timeout /T 2 /NOBREAK >nul
 echo ^:O
+timeout /T 1 /NOBREAK >nul
 echo ^:^\ fine, I will let you go this time
+timeout /T 3 /NOBREAK >nul
 echo not because you are cute or funny or anything like that hmph
+timeout /T 2 /NOBREAK >nul
 echo (I love you)
+timeout /T 1 /NOBREAK >nul
 echo right, the theme for this year is...
+timeout /T 2 /NOBREAK >nul
 echo the seven deadly sins!
+timeout /T 2 /NOBREAK >nul
 goto :final2
 
 :final2
 echo it's just a convenient coincidence to be honest
+timeout /T 2 /NOBREAK >nul
 echo 7 years as 7 sins, well, just a same theme but lighter?
+timeout /T 3 /NOBREAK >nul
 echo [93m[001][0m Greed - is what I would do with you if I can have everything in this world
+timeout /T 3 /NOBREAK >nul
 echo well, mostly time, cause that what we both don't have enough to spend time together
+timeout /T 3 /NOBREAK >nul
 echo [93m[002][0m Envy - this one is erm, I don't really know will it goes well
+timeout /T 3 /NOBREAK >nul
 echo the "present" is supposed to be a text saying "You will always be mine, mine alone" with ame flashing
+timeout /T 3 /NOBREAK >nul
 echo [93m[003][0m Wrath - but I turn it into an apology for when I make you mad
+timeout /T 3 /NOBREAK >nul
 echo well, it's pretty much just flexing how I can write something to send a email to you hehe
+timeout /T 3 /NOBREAK >nul
 echo [93m[004][0m Sloth - Aren't daydreaming is the best?
+timeout /T 3 /NOBREAK >nul
 echo [93m[005][0m Gluttony - I... don't really know if it is ok because it just randomly come to my mind
+timeout /T 3 /NOBREAK >nul
 echo I mean, if you real all those sentences...maowmaow, it's quite obvious
+timeout /T 3 /NOBREAK >nul
 echo [93m[006][0m Lust - somehow the comfy one lol, quite straight up horny
+timeout /T 3 /NOBREAK >nul
 echo did you make a copy of it? well that's the only copy I have
+timeout /T 3 /NOBREAK >nul
 echo just kidding ehehe, if you want to read it again, here
+timeout /T 3 /NOBREAK >nul
 start "" ".\lib\006.txt"
 echo and the last layer, [93m[007][0m Pride - bascially describe how cool you are B)
+timeout /T 3 /NOBREAK >nul
 echo ......
+timeout /T 3 /NOBREAK >nul
 echo oh well, what has been done is done, and
+timeout /T 2 /NOBREAK >nul
 echo maowmaow
+timeout /T 1 /NOBREAK >nul
 echo I love you Sandy
+timeout /T 2 /NOBREAK >nul
 echo I hope that this small piece of scripts can make you happy
+timeout /T 3 /NOBREAK >nul
 echo not small considered that it has 600+ lines of code, but whatever 
+timeout /T 3 /NOBREAK >nul
 echo I don't really know this time since it has more gimmick that the last one
+timeout /T 3 /NOBREAK >nul
 echo which---did not goes all the same way
+timeout /T 3 /NOBREAK >nul
 echo I mean, one open picture, one send an email, one glitched, one run a bullet of text lol
+timeout /T 3 /NOBREAK >nul
 echo anyways
+timeout /T 1 /NOBREAK >nul
 echo thank you if you are reading all of this, really appreaciated it
+timeout /T 3 /NOBREAK >nul
 echo there is no skip button anyway HAHA
+timeout /T 1 /NOBREAK >nul
 echo well then, until next time
+timeout /T 4 /NOBREAK >nul
 echo muah mauh ^<3
+timeout /T 2 /NOBREAK >nul
 echo.
 echo (you have achieved the ending.)
 echo (you can now view all the presents again by
@@ -657,37 +720,69 @@ For /F %%A In ('"Prompt $H&For %%B In (1) Do Rem"') Do Set "BS=%%A"
 For /F Delims^=^ EOL^= %%A In ('"(CMD/U/CEcho=%STRING%)|Find /V """'
 ) Do Set/P "=a%BS%%%A"<Nul & PathPing 127.0.0.1 -n -q 1 -p 20 1>Nul
 echo.
+timeout /T 1 /NOBREAK >nul
 echo [38;5;177m- is you
+timeout /T 1 /NOBREAK >nul
 echo - is smart
+timeout /T 1 /NOBREAK >nul
 echo - is cute and lovble as fuck
+timeout /T 1 /NOBREAK >nul
 echo - is excellent for cuddling, hugging, and kissing
+timeout /T 1 /NOBREAK >nul
 echo - is having an upcoming marriage with Tinn
+timeout /T 1 /NOBREAK >nul
 echo - is chaotic playful but become more serious when talking about love
+timeout /T 1 /NOBREAK >nul
 echo - is sociable and talkative than Sandy thought to be
+timeout /T 1 /NOBREAK >nul
 echo - is great at drawing with fingers
+timeout /T 1 /NOBREAK >nul
 echo - is listening to the mystery and crime podcast
+timeout /T 1 /NOBREAK >nul
 echo - is facing hardship so many times that I ought to hug her all night
+timeout /T 1 /NOBREAK >nul
 echo - is reasonable, even self-concioius about Sandy's own feeling and know when things got irrational
+timeout /T 1 /NOBREAK >nul
 echo - is not your typical girly type which make Sandy special
+timeout /T 1 /NOBREAK >nul
 echo - is always here for Tinn ;w;
+timeout /T 1 /NOBREAK >nul
 echo - has based broken humor as Tinn
+timeout /T 1 /NOBREAK >nul
 echo - is eating a hoarde of salmon until it extinct
+timeout /T 1 /NOBREAK >nul
 echo - is interested by a pound of cheesecake
+timeout /T 1 /NOBREAK >nul
 echo - is feeling purple
+timeout /T 1 /NOBREAK >nul
 echo - is all-nighter (at least still up in the midnight is something else)
+timeout /T 1 /NOBREAK >nul
 echo - is fighting a losing battle against the shrimp
+timeout /T 1 /NOBREAK >nul
 echo - is throwing a mirror out of the house
+timeout /T 1 /NOBREAK >nul
 echo - is incredibly horny
+timeout /T 1 /NOBREAK >nul
 echo - is as hot as one can be, especially in bed 
+timeout /T 1 /NOBREAK >nul
 echo - is submissive so much that cannot act to be dominant :D
+timeout /T 1 /NOBREAK >nul
 echo - is likely to get knocked out in the bed
+timeout /T 1 /NOBREAK >nul
 echo - is a derogatory freak (why ;;)
+timeout /T 1 /NOBREAK >nul
 echo - is still seeking true love
+timeout /T 1 /NOBREAK >nul
 echo - is the only one who talk to Tinn in the night ;w;
+timeout /T 1 /NOBREAK >nul
 echo - is finding a lovely broadway music, or some edgy vocaloid >:D
+timeout /T 1 /NOBREAK >nul
 echo - is worried about losing Sandy's love, though it is not possible
+timeout /T 1 /NOBREAK >nul
 echo - is already promised with Tinn to be together forever
+timeout /T 1 /NOBREAK >nul
 echo - and Sandy is my best partner I will ever have
+timeout /T 1 /NOBREAK >nul
 echo - I love you ^<3[0m
 if %pass%==1 ( echo 007 is opened & set /a pass=0 & goto :rewardcheatinput ) else (goto :peacockwin3 )
 goto :peacockwin3
