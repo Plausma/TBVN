@@ -1,13 +1,13 @@
 # TBVN
 personal project for the upcoming 7th anniversary
-# Description
+## Description
 TBVN (is supposed to be Text-Based Visual Novel but it has a weak point of visual so just call it-), A text-based minigame that made in batch language, this is to make things easier to run without any additional installation (if you use Window, that is).
-# Instruction
+## Instruction
 Extract and run "84.bat"
 
 *Window will stop you from starting it since it is a language that is near a machine language, which make the machine vulnerable than a user-friendly language like _python_ or _ruby_.
 
-# Hint and tips
+## Hint and tips
 * There are easter eggs hidden in the script.
 * All the first layer code can be found under this (most are in all lowercase)
     * a chamber (such as a vault) wholly or partly underground with "os" after it
@@ -26,7 +26,7 @@ Extract and run "84.bat"
 
 There is no obligation to solve this from top to bottom, you can start at any challenge you would like to.
 
-# Progress
+## Progress
 This project started since 22 January and the first final version is released in 26 January
 
 It is expected to be open at the midnight of 28 January
