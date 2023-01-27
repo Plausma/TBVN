@@ -3,7 +3,9 @@ personal project for the upcoming 7th anniversary
 ## Description
 TBVN (is supposed to be Text-Based Visual Novel but it has a weak point of visual so just call it-), A text-based minigame that made in batch language, this is to make things easier to run without any additional installation (if you use Window, that is).
 ## Instruction
-Extract and run "84.bat"
+Download the file from "release" tab at the right then extract and run `84.bat`
+
+Password for the file is the barcode identification number of the seal
 
 *Window will stop you from starting it since it is a language that is near a machine language, which make the machine vulnerable than a user-friendly language like _python_ or _ruby_.
 
